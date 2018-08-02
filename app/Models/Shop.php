@@ -9,13 +9,8 @@ class Shop extends Model
     protected $fillable = ['shop_category_id', 'shop_name', 'shop_img', 'shop_rating', 'brand', 'on_time', 'fengniao', 'bao',
         'piao', 'zhun', 'start_send', 'send_cost', 'notice', 'discount', 'status'];
 
-    public function cate()
-    {
-        return $this->hasOne(Shop_Categories::class, 'id', 'shop_category_id');
+    public function category(){
+        return $this->hasOne(Shop_Categories::class,'id','shop_category_id');
     }
 
-    public function logo()
-    {
-        return "../storage/app/" . $this->shop_img;
-    }
 }

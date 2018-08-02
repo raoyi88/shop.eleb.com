@@ -1,6 +1,10 @@
-@extends('default')
+@extends('header')
 @section('content')
 <div class="container">
+    {{--名称:<input type="text" name="name" id="name">--}}
+    {{--最低:<input type="text" name="min" id="min">--}}
+    {{--最高:<input type="text" name="max" id="max">--}}
+    {{--<button type="button" onclick="search()">搜索</button>--}}
     <table class="table">
         <tr>
             <a href="{{ route('shop.create') }}">添加店铺</a>
@@ -9,26 +13,15 @@
             <th>所属分类</th>
             <th>店铺名称</th>
             <th>店铺图片</th>
-            {{--<th>评分</th>--}}
-            {{--<th>是否品牌</th>--}}
-            {{--<th>是否准时送达</th>--}}
-            {{--<th>是否蜂鸟配送</th>--}}
-            {{--<th>是否保标记</th>--}}
-            {{--<th>是否提供发票</th>--}}
-            {{--<th>是否准标记</th>--}}
-            {{--<th>起送金额</th>--}}
-            {{--<th>配送费</th>--}}
-            {{--<th>店面公告</th>--}}
-            {{--<th>优惠信息</th>--}}
             <th>状态</th>
             <th>操作</th>
         </tr>
         @foreach($shops as $shop)
             <tr>
-                <td>{{ $shop->shop_category_id }}</td>
+                <td></td>
                 <td>{{ $shop->shop_name }}</td>
                 <td>
-                    <img src="{{ $shop->logo() }}" alt="" width="100px">
+                    <img src="{{ $shop->shop_img }}" alt="" width="100px">
                 </td>
                 <td>{{ $shop->status?"上线":"下线" }}</td>
                 <td>
@@ -44,4 +37,18 @@
         @endforeach
     </table>
 </div>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script>
+    // $.get('/get_shops',{},function (result) {
+    //     console.log(result.data)
+    // });
+
+    // function search() {
+    //     var name = $("#name").val();
+    //     var min = $("#min").val();
+    //     var max = $("#max").val();
+    //     location.href="/shop?name="+name+"&min="+min+"&max="+max
+    // }
+</script>
 @endsection
+

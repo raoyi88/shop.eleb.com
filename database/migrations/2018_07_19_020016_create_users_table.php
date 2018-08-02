@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
 //status	int	状态：1启用，0禁用
             $table->tinyInteger('status');
 //shop_id	int	所属商家
-            $table->tinyInteger('shop_id');
+            $table->tinyInteger('shop_id')->nullable();
             $table->timestamps();
         });
     }

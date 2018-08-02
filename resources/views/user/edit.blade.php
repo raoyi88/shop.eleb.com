@@ -9,7 +9,7 @@
             邮箱: <input type="email" name="email" value="{{ $user->email }}" class="form-control"> <br>
             商铺: <select name="shop_id">
                 @foreach($shop as $s)
-                    <option value="{{ $s->id }}">{{ $s->name }}</option>
+                    <option value="{{ $s->id }}">{{ $s->id }}</option>
                 @endforeach
             </select>
         </form>

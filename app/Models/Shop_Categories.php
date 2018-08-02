@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Storage;
 
 class Shop_Categories extends Model
 {
-    protected $fillable=['name','img'];
-    public function logo(){
-        return "../storage/app/".$this->img;
-    }
+    protected $fillable=['name','img','status'];
+
 }

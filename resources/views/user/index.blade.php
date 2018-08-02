@@ -2,7 +2,9 @@
 @section('content')
 <div class="container">
     <a href="{{ route('user.create') }}" class="btn btn-success">添加</a>
-    <table class="table-bordered">
+    <table class="table">
+        {{ csrf_field() }}
+        {{ method_field('PATCH') }}
         <tr>
             <th>ID</th>
             <th>用户名</th>
@@ -18,7 +20,11 @@
                 <td> {{ $user->status?"是":"否" }}</td>
                 <td>
                     <a href="{{ route('user.edit',[$user]) }}" class="btn btn-info">修改</a>
-                    <a href="" class="btn btn-danger">删除</a>
+                    <form method="post" action="{{ route('user.destroy',[$user]) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('delete') }}
+                        <button class="btn btn-danger">删除</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
