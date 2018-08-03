@@ -13,7 +13,8 @@ Route::resource('menu','MenuController');
 Route::get('get_shops','ShopController@getShops');
 Route::get('artivity','ArtivityController@index')->name('artivity');
 Route::resource('order','OrderController');
-
 //订单统计
 Route::get('CountOrder','OrderController@CountOrder')->name('CountOrder');
+Route::resource('event','EventController');
+Route::get('baoming/{event}','EventController@baoming')->name('baoming');
 
